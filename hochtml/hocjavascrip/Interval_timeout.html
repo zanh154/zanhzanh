@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*let data3 = new Date();
+        let prefixDay = data3.getDate()<10?"0":"";
+        let prefixMonth = data3.getMonth()<9?"0":"";
+        setTimeout(() =>{ 
+        console.log(`
+        Ngày ${prefixDay}${data3.getDate()}/Tháng ${prefixMonth}${data3.getMonth() + 1}/Năm ${data3.getFullYear()}`
+    )},3000);
+    let name = prompt('Nhập tên của bạn: ');
+    function showAfter(){
+        alert(`Heloo ${name}`);
+    }
+    setInterval(showAfter,3000);*/
+    CalculateOld = function(inputYear){
+    let data = new Date();
+    let yearOfBir = Number(inputYear);
+    if(!Number.isInteger(yearOfBir) || yearOfBir<=0 || yearOfBir%1!=0){
+        alert('Không hợp lệ, năm sinh nhập vòa phải là 1 số nguyên lớn 0');
+        return false;
+    }
+    let age = data.getFullYear() - yearOfBir;
+    alert(`Tuổi của bạn là ${age}`)
+    return true;
+    }
+
+    function starwhileloop(){
+        let whileloop = setInterval(() =>{
+            let inputYear = prompt('Nhập năm sinh của bạn: ');
+            if(setTimeout(CalculateOld(inputYear),1000)){
+                clearInterval(whileloop);
+                staranswer();
+            }
+        },1000);
+    }
+
+    function staranswer(){
+        let answer = setInterval(()=>{
+            let ans = prompt('Bạn có muốn tính tiếp không: ');
+            if(ans&&ans.toLowerCase().includes('no')|| ans.toLowerCase().includes('không')){
+                clearInterval(answer);
+            }else{
+                starwhileloop();
+                clearInterval(answer);
+            }
+        },1000);
+    }
+
+    starwhileloop();
+    </script>
+</body>
+</html>

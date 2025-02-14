@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #vai{
+        height: 70px;
+        width: 50px;
+    }
+    #right-boobs{
+        width: 74px;
+    }
+    .boobs{
+        position: relative;
+        left: 60px;
+        cursor: pointer;
+        transition: all 1s;
+    }
+    #underbody{
+        position: relative;
+        left: 40px;
+    }
+    #status{
+        font-size: 20px;
+        font-weight: 1000;
+        color: blueviolet;
+    }
+    #ao{
+        height: 70px;
+        width: 50px;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="/images/hinh1anime.png" alt="">
+    </div>
+    <div>
+        <img src="/images/hinhao.png" id="ao" class="boobs">
+        <img src="/images/nguctrai.png" class="boobs">
+        <img src="/images/ngucphai.png" id="right-boobs" class="boobs">
+        <img src="/images/hinhvai.png"  id="vai" class="boobs">
+    </div>
+    <div>
+        <img src="/images/hinh2anime.png" id="underbody">
+    </div>
+    <span id="status">Helooo</span>
+    <script>
+        function playsound(){
+            const audio = new Audio('boob.mp3')
+            audio.play();
+        }
+        const rightboob = document.querySelector('#right-boobs')
+        const status = document.querySelector('#status')
+        rightboob.onclick = () => {
+            playsound();
+            rightboob.style.top = '-50px';
+            setTimeout(() => { 
+                rightboob.style.top = '0px';
+                },500);
+                rightboob.style.width = '74px';
+            status.innerText = "Bỏ tay ra";
+        }
+        rightboob.onmouseover = () => {
+            rightboob.style.width = '100px';
+            status.innerText = "Hãy chạm tay vào nó";
+        }
+        rightboob.onmouseleave = () => {
+            status.innerText = "AAAAA 100k"
+        }
+    </script>
+</body>
+</html>

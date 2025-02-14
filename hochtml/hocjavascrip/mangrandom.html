@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let choice = 0;
+        let data = [];
+        let isSearching = false; 
+        do{
+            if(!isSearching){
+                console.log(`
+                1. Nhập độ dài mảng
+                2. Xuất mảng
+                3. Đảo ngược mảng
+                4. Sắp xếp mảng tăng dần
+                5. Tổng phần tử mảng
+                6. Tìm phần tử trong mảng
+                7. Kết thúc chương trình 
+                `);
+                choice = Number(prompt(`Nhập bài bạn muốn: `));
+            }
+            switch(choice){
+                case 1:{
+                    function createRandomArray(n){
+                        let arr = [];
+                        for(let i=0;i<n;i++){
+                            arr.push(Math.floor(Math.random()*100));
+                        }
+                        return arr;
+                    }  
+                    let input = prompt('Nhập độ dài mảng mong muốn: ')
+                    data = createRandomArray(input);
+                    break;
+                }
+                case 2:{
+                    console.log(`----------------Mảng đầu tiên---------------`);
+                    console.log(data);
+                    console.log(`Mảng: `+ data.join(" ,"))
+                    break;
+                }
+                case 3:{
+                    console.log(`----------------Mảng đảo ngược--------------`);
+                    let Araryreverse = data.slice().reverse();
+                    console.log('Mảng: '+ Araryreverse.join(" ,"));
+                    break;
+                }
+                case 4:{
+                    console.log(`----------------Mảng tăng dần---------------`);
+                    function sortArray(array){
+                    return data.sort((a,b) => a - b);
+                    }
+                    let sortedArray = sortArray([...data]);
+                    console.log(sortedArray);
+                    break;
+                }
+                case 5:{
+                    console.log(`----------------Tổng phần tử---------------`);
+                    let sum = data.reduce(
+                        (a,b) => a+b,0
+                    );
+                    console.log(`Tổng: `+ sum);
+                    break;
+                }
+                case 6:{
+                    console.log(`------------------Tìm x-----------------------`)
+                    function inedxTwoElements(array,Number){
+                        let index = [];
+                        for(let i=0;i<array.length;i++){
+                            if(array[i]===Number){
+                                index.push(i);
+                            }
+                        }return index;
+                    };
+                    isSearching = true;
+                    NumberArray = function(input){
+                        let searchNumber = Number(input);
+                        let resultindex = inedxTwoElements(data,searchNumber);
+                        if(resultindex.length<2){
+                            for(let i = 0; i<data.length;i++){
+                                if(data[i]===searchNumber){
+                                    console.log(`Số ${searchNumber} được tìm thấy tại vị trí: ${i}`);
+                                    return true;
+                                }
+                            }
+                        }else{
+                            console.log(`số ${searchNumber} được tìm thấy ở các vị trí: ${resultindex.join(" ,")}`)
+                            return true;
+                        }
+                                console.log(`Số cần tìm không có trong mảng!`)
+                                return false;
+                    };
+                    function xLoop(){
+                        let x = prompt('Nhập số bạn muốn tìm: ');
+                        if(NumberArray(x)){
+                            choice = 0;
+                            isSearching = false;
+                        }
+                    };
+                    xLoop();
+                    break;
+                }
+                default:{
+                    console.log(`Bái bai không hẹn gặp lại!`);
+                }
+            }
+        }while(choice!=7);
+    </script>
+</body>
+</html>

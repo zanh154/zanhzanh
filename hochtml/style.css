@@ -1,0 +1,102 @@
+p{
+    background-color: white;color: red;
+    font-family: sans-serif,Lucida Sans,Arial;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bolder;
+    text-decoration: underline;
+    text-transform: capitalize;
+    border-style: inset;
+    border-width: 5px;
+    border-color: greenyellow;
+    border-radius: 10px;
+    padding: 10px;
+    border-top-color: red;
+    border-right-width: 15px;
+    background-origin: unset;
+}
+
+.le{
+    background: linear-gradient(to right,skyblue,lightgreen);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    overflow: auto;
+}
+
+#para3{
+    background-color: black;color: wheat;
+}
+
+body{
+    background-image: url(/images/Screenshot\ 2024-12-10\ 150658.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+#box1{
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    background-color: yellow;
+}
+
+#box2{
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    background-color: green;
+    margin-top: 20px;
+    padding-right: 30px;
+    position: sticky;
+}
+
+h1{
+    text-shadow: 5px 5px 5px grey;
+    box-shadow: 10px 10px 5px yellow;
+}
+/*lệnh trong css dùng để canh
+    position: static thuộc tính mặc định
+    relative: canh thoe đoạn văn bản ở trên
+    absolute: canh thoe lớp cha vd box1 nằm trong body thì nó sẽ canh theo body
+    fixed: để đâu là để đó luôn cho dù có lướt xún
+    sticky: để đâu là để đó luôn mà khi lkuowts xúng nó sẽ canh theo thanh cung cụ*/
+/*#box3{
+    border: solid 1px black;
+    font-size: 20px;
+    width: 200px;
+    height: 200px;
+    background-color: greenyellow;
+
+    transform: translate(40px,50px);
+    transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    transform: scaleX(3);
+    transform: scaleY(1);
+    transform: skew(15deg,20deg);
+
+    transform: matrix(2,0,0,2,250,250);
+    scaleX()
+    SkewY()
+    SkewX()
+    ScaleY()
+    TranslateX()
+    TranslateY()
+}*/
+button:hover{
+    background-color: black;color: white;
+}
+button:active{
+    background-color: red;
+}
+
+li:nth-child(even){
+    color: red;
+}
+
+@media all and (max-width: 768px){
+    h2{
+        color: blueviolet;
+    }
+}

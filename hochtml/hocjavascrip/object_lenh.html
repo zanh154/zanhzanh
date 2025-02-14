@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person3 = {
+           name: "anh",
+           age: "19"
+        }
+        let person4 = {
+           name: "anh",
+           age: "19"
+        }
+        let target = {c: 12}
+        let source1 = {a: 10}
+        let source2 = {b: 20}
+        //keys là xuất ra mảng chỉ chứa key của đối tượng
+        let test = Object.keys(person3);
+        console.log(test); // [name , age]
+
+        //values là xuất ra mảng chỉ chứa value của đối tượng
+        let test1 = Object.values(person3); 
+        console.log(test1); // [anh, 19]
+
+        //entries là xuất ra mảng chứa key và value của đối tượng
+        let test2 = Object.entries(person3); 
+        console.log(test2); // [name, anh],[age, 19]
+
+        //assign là xuất ra mảng kết hợp tất cả các mảng còn lại => assign(mảng chủ, mảng con,...)
+        let test3 = Object.assign(target,source1,source2);
+        console.log(test2); //{c:12, a:10, b: 20}
+
+        //hasOwnProperty kiểm tra xem đối tượng có thuộc tính tương thích không
+        let test4 = Object.hasOwnProperty("name");
+        console.log(test4); // true
+        
+        //freeze đóng băng đối tượng không cho thêm, xóa, sửa thuộc tính của đối tượng đó
+        Object.freeze(person4);
+        person4.age = "29";
+        person4["email"] = "nzero1542005@gmail.com";
+        delete person4.email;
+        console.log(person4);
+
+        //seal không cho phép xóa, thêm nhưng cho phép sửa thuộc tính của đối tượng
+        let person5 = {
+           name: "anh",
+           age: "19"
+        }
+        Object.seal(person5);
+        person5.age = "29";
+        delete person5.age;
+        person5.email = "nzero1542005@gmail.com";
+        console.log(person5);
+        
+        </script>
+</body>
+</html>

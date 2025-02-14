@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [1,2,3,4,8,6,5,7];
+        /*
+        let sum = array.reduce(
+        (accumulator, currentValue, currentIndex, array) => {
+            return accumulator + currentValue;
+        },0
+        );
+        console.log(sum)
+        cách ngắn gọn hơn
+        let sum1 = array.reduce((a, b) => a + b, 0);
+        console.log(sum1);*/
+        let evenNumbers = array.filter(
+        (value, index, array) => value%2===0
+        );
+        console.log(evenNumbers);
+        console.log(array.splice(2,1,1,2));
+        
+    </script>
+</body>
+</html>

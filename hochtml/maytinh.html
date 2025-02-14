@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #input {
+            border-style: groove;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+        }
+        #output {
+            border-style: dashed;
+        }
+        .Calculate button {
+            width: 130px;
+            height: 30px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>Simple Online Calculate</p>
+    <div class="show">
+        <div id="input">0</div>
+        <div id="output">0</div>
+    </div>
+    <div class="Calculate" id="buttonContainer"></div>
+
+    <script>
+         // Danh sách giá trị các nút
+         const buttons = [
+            '^', '√', 'log', 'CE',
+            '7', '8', '9', '/',
+            '4', '5', '6', '*',
+            '1', '2', '3', '-',
+            '0', ',', '=', '+'
+        ];
+
+        // Lấy container chứa nút
+        const buttonContainer = document.getElementById('buttonContainer');
+
+        // Tạo và thêm nút vào container
+        buttons.forEach((value, index) => {
+            const button = document.createElement('button'); // Tạo nút mới
+            button.textContent = value;                     // Gán nội dung nút
+            button.setAttribute('data-value', value);
+            button.onclick = () => handleButtonClick(value);
+            buttonContainer.appendChild(button);         
+        });
+        function handleButtonClick(value) {
+            console.log(`Button clicked: ${value}`);
+        }
+    </script>
+</body>
+</html>
